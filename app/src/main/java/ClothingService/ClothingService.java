@@ -4,6 +4,7 @@ public class ClothingService {
 
     private String clothes;
     private int time;
+    private int rating;
 
 
     public void setClothes(double temp){
@@ -11,18 +12,22 @@ public class ClothingService {
         if(temp >= 21){
             this.clothes = TempEnum.HOT.getRandomClothes();
             this.time = TempEnum.HOT.getTime();
+            this.rating = TempEnum.HOT.getAllSetsWithRatings().get(clothes);
         }
         if(temp < 21 && temp >= 15){
             this.clothes = TempEnum.WARM.getRandomClothes();
             this.time = TempEnum.WARM.getTime();
+            this.rating = TempEnum.WARM.getAllSetsWithRatings().get(clothes);
         }
         if(temp < 15 && temp >= 1){
             this.clothes = TempEnum.COLD.getRandomClothes();
             this.time = TempEnum.COLD.getTime();
+            this.rating = TempEnum.COLD.getAllSetsWithRatings().get(clothes);
         }
         if(temp < 1){
             this.clothes = TempEnum.FREEZING.getRandomClothes();
             this.time = TempEnum.FREEZING.getTime();
+            this.rating = TempEnum.FREEZING.getAllSetsWithRatings().get(clothes);
         }
     }
 
@@ -51,5 +56,7 @@ public class ClothingService {
     public int getTime(){
         return this.time;
     }
-
+    public int getRating() {
+        return rating;
+    }
 }
