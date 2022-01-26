@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ratingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFFE2"
+    android:fitsSystemWindows="true"
+    tools:context=".RatingActivity">
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#FBFFE2"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.WEARapp.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#FBFFE2"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="140dp"
+                android:layout_marginVertical="5dp"
+                android:text="@string/rating"
+                android:textColor="@color/pink"
+                android:textSize="40sp"
+                android:visibility="visible"
+                tools:text="Rating" />
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_scrolling" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1668dp"
+        app:layout_anchor="@+id/constraintLayout"
+        app:layout_anchorGravity="center">
+
+        <TextView
+            android:id="@+id/clo1"
+            android:layout_width="95dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="90dp"
+            android:text="@string/some_clothes1"
+            android:textAlignment="center"
+            app:layout_anchorGravity="start|center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/Rate1"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/border"
+            android:ems="5"
+            android:hint="@string/ocena1"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/clo1"
+            app:layout_constraintStart_toEndOf="@+id/clo1"
+            app:layout_constraintTop_toTopOf="@+id/clo1"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#FF499E"
+            android:text="@string/rate1"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/Rate1"
+            app:layout_constraintStart_toEndOf="@+id/Rate1"
+            app:layout_constraintTop_toTopOf="@+id/Rate1"
+            app:layout_constraintVertical_bias="0.533"
+            tools:ignore="DuplicateSpeakableTextCheck,SmallSp,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/ocena1"
+            android:layout_width="95dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="12dp"
+            android:text=""
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/button1"
+            app:layout_constraintStart_toEndOf="@+id/button1"
+            app:layout_constraintTop_toTopOf="@+id/button1"
+            app:layout_constraintVertical_bias="0.533" />
+
+        <TextView
+            android:id="@+id/clo2"
+            android:layout_width="95dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/some_clothes2"
+            android:textAlignment="center"
+            app:layout_anchorGravity="start|center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clo1" />
+
+        <EditText
+            android:id="@+id/Rate2"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/border"
+            android:ems="5"
+            android:hint="@string/ocena2"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/clo2"
+            app:layout_constraintStart_toEndOf="@+id/clo2"
+            app:layout_constraintTop_toTopOf="@+id/clo2"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#FF499E"
+            android:text="@string/rate2"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/Rate2"
+            app:layout_constraintStart_toEndOf="@+id/Rate2"
+            app:layout_constraintTop_toTopOf="@+id/Rate2"
+            app:layout_constraintVertical_bias="0.533"
+            tools:ignore="SmallSp,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/ocena2"
+            android:layout_width="95dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="12dp"
+            android:text=""
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/button2"
+            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintTop_toTopOf="@+id/button2"
+            app:layout_constraintVertical_bias="0.533" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_anchor="@+id/app_bar"
+        app:layout_anchorGravity="center"
+        app:layout_collapseMode="pin"
+        app:popupTheme="@style/Theme.WEARapp.PopupOverlay" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
