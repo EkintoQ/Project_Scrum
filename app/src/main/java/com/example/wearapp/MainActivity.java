@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     // for weather api
     private String cloth;
     private int time;
+    private int rating;
 
 
     class WeatherAPI extends AsyncTask<String, String, String> {
@@ -143,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
             clothes.addAccessories(weather);
             cloth = clothes.getClothes();
             time = clothes.getTime();
+            rating = clothes.getRating();
 //            txtShow.setText(cloth + time);
         }
     }
@@ -316,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
                     String hourWake = timeOfAwaking.substring(0, 2);
                     String minuteWake = timeOfAwaking.substring(3, 5);
                     createNotification("Wake Up","Tramwaj numer: " + data.get(2) + "/Godzina odjazdu:" + data.get(1)
-                            + "/Ubranie:" + cloth, Integer.parseInt(hourWake), Integer.parseInt(minuteWake));
+                            + "/Ubranie:" + cloth + "/Ocena:" + rating, Integer.parseInt(hourWake), Integer.parseInt(minuteWake));
 
                     Toast.makeText(MainActivity.this, "Powiadomienie nadejdzie o " + timeOfAwaking, Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
